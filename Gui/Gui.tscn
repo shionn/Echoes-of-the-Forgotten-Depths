@@ -35,7 +35,7 @@
 [ext_resource type="Texture2D" uid="uid://boyc38jk2iy35" path="res://Gui/Assets/kenney/cursor-pack/tool_pickaxe.png" id="26_f4re5"]
 [ext_resource type="Script" uid="uid://b57hjgf2uu7ly" path="res://Gui/Introduction.gd" id="26_m2wub"]
 [ext_resource type="Texture2D" uid="uid://coqbc50srmggs" path="res://Gui/Assets/kenney/cursor-pack/drawing_brush.png" id="29_cq4r1"]
-[ext_resource type="Texture2D" uid="uid://yfroui2vo2nl" path="res://Gui/Assets/kenney/cursor-pack/steps.png" id="30_tamh2"]
+[ext_resource type="Texture2D" uid="uid://bqddr45xk6adm" path="res://Gui/Assets/kenney/cursor-pack/target_round_b.png" id="30_xkmul"]
 [ext_resource type="Script" uid="uid://c88iufjhxl8bb" path="res://Gui/KeyButton.gd" id="31_tamh2"]
 [ext_resource type="Script" uid="uid://c47eb21su127s" path="res://Gui/DungeonExit.gd" id="34_f4re5"]
 [ext_resource type="Texture2D" uid="uid://ctgwsk6s31p4p" path="res://Gui/Assets/kenney/cursor-pack/door_enter.png" id="34_w65rx"]
@@ -824,13 +824,13 @@ theme_override_styles/tab_selected = SubResource("StyleBoxEmpty_2pnra")
 theme_override_styles/tab_disabled = SubResource("StyleBoxEmpty_l4ar5")
 theme_override_styles/tab_focus = SubResource("StyleBoxEmpty_owfy6")
 tab_alignment = 1
-current_tab = 0
+current_tab = 1
 tab_0/title = "Affichage et Son"
 tab_0/icon = ExtResource("29_cq4r1")
-tab_1/title = "Contrôle"
-tab_1/icon = ExtResource("30_tamh2")
+tab_1/icon = ExtResource("30_xkmul")
 
 [node name="Affichage" type="GridContainer" parent="Options/PanelC/MarginC/VBoxC/TabC" unique_id=861830191]
+visible = false
 layout_mode = 2
 size_flags_vertical = 3
 theme_override_constants/h_separation = 15
@@ -994,21 +994,22 @@ popup/item_1/id = 1
 popup/item_2/text = "Les Deux"
 popup/item_2/id = 2
 
-[node name="Controle" type="GridContainer" parent="Options/PanelC/MarginC/VBoxC/TabC" unique_id=1764653607]
-visible = false
+[node name="Controle" type="VBoxContainer" parent="Options/PanelC/MarginC/VBoxC/TabC" unique_id=1805601947]
+layout_mode = 2
+metadata/_tab_index = 1
+
+[node name="Touches" type="GridContainer" parent="Options/PanelC/MarginC/VBoxC/TabC/Controle" unique_id=1764653607]
 layout_mode = 2
 size_flags_vertical = 3
 theme_override_constants/h_separation = 15
 columns = 4
-metadata/_tab_index = 1
-metadata/_tab_name = "Contrôle"
 
-[node name="AvancerL" type="Label" parent="Options/PanelC/MarginC/VBoxC/TabC/Controle" unique_id=1353973105]
+[node name="AvancerL" type="Label" parent="Options/PanelC/MarginC/VBoxC/TabC/Controle/Touches" unique_id=1353973105]
 layout_mode = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 text = "Avancer"
 
-[node name="AvancerB" type="Button" parent="Options/PanelC/MarginC/VBoxC/TabC/Controle" unique_id=1095198074]
+[node name="AvancerB" type="Button" parent="Options/PanelC/MarginC/VBoxC/TabC/Controle/Touches" unique_id=1095198074]
 layout_mode = 2
 size_flags_horizontal = 3
 text = "Z
@@ -1016,12 +1017,12 @@ text = "Z
 script = ExtResource("31_tamh2")
 action_name = "move_front"
 
-[node name="ReculerL" type="Label" parent="Options/PanelC/MarginC/VBoxC/TabC/Controle" unique_id=1356445070]
+[node name="ReculerL" type="Label" parent="Options/PanelC/MarginC/VBoxC/TabC/Controle/Touches" unique_id=1356445070]
 layout_mode = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 text = "Reculer"
 
-[node name="ReculerB" type="Button" parent="Options/PanelC/MarginC/VBoxC/TabC/Controle" unique_id=22579727]
+[node name="ReculerB" type="Button" parent="Options/PanelC/MarginC/VBoxC/TabC/Controle/Touches" unique_id=22579727]
 layout_mode = 2
 size_flags_horizontal = 3
 text = "Z
@@ -1029,12 +1030,12 @@ text = "Z
 script = ExtResource("31_tamh2")
 action_name = "move_back"
 
-[node name="PasGaucheL" type="Label" parent="Options/PanelC/MarginC/VBoxC/TabC/Controle" unique_id=495835688]
+[node name="PasGaucheL" type="Label" parent="Options/PanelC/MarginC/VBoxC/TabC/Controle/Touches" unique_id=495835688]
 layout_mode = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 text = "Pas à Gauche"
 
-[node name="PasGaucheB" type="Button" parent="Options/PanelC/MarginC/VBoxC/TabC/Controle" unique_id=650313060]
+[node name="PasGaucheB" type="Button" parent="Options/PanelC/MarginC/VBoxC/TabC/Controle/Touches" unique_id=650313060]
 layout_mode = 2
 size_flags_horizontal = 3
 text = "Z
@@ -1042,12 +1043,12 @@ text = "Z
 script = ExtResource("31_tamh2")
 action_name = "move_left"
 
-[node name="PasDroiteL" type="Label" parent="Options/PanelC/MarginC/VBoxC/TabC/Controle" unique_id=1645789785]
+[node name="PasDroiteL" type="Label" parent="Options/PanelC/MarginC/VBoxC/TabC/Controle/Touches" unique_id=1645789785]
 layout_mode = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 text = "Pas à Droite"
 
-[node name="PasDroiteB" type="Button" parent="Options/PanelC/MarginC/VBoxC/TabC/Controle" unique_id=445400501]
+[node name="PasDroiteB" type="Button" parent="Options/PanelC/MarginC/VBoxC/TabC/Controle/Touches" unique_id=445400501]
 layout_mode = 2
 size_flags_horizontal = 3
 text = "Z
@@ -1055,12 +1056,12 @@ text = "Z
 script = ExtResource("31_tamh2")
 action_name = "move_right"
 
-[node name="SpellL1" type="Label" parent="Options/PanelC/MarginC/VBoxC/TabC/Controle" unique_id=1438652059]
+[node name="SpellL1" type="Label" parent="Options/PanelC/MarginC/VBoxC/TabC/Controle/Touches" unique_id=1438652059]
 layout_mode = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 text = "Sort 1"
 
-[node name="SpellB1" type="Button" parent="Options/PanelC/MarginC/VBoxC/TabC/Controle" unique_id=1777644836]
+[node name="SpellB1" type="Button" parent="Options/PanelC/MarginC/VBoxC/TabC/Controle/Touches" unique_id=1777644836]
 layout_mode = 2
 size_flags_horizontal = 3
 text = "Z
@@ -1068,12 +1069,12 @@ text = "Z
 script = ExtResource("31_tamh2")
 action_name = "spell_1"
 
-[node name="SpellL2" type="Label" parent="Options/PanelC/MarginC/VBoxC/TabC/Controle" unique_id=1143329882]
+[node name="SpellL2" type="Label" parent="Options/PanelC/MarginC/VBoxC/TabC/Controle/Touches" unique_id=1143329882]
 layout_mode = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 text = "Sort 2"
 
-[node name="SpellB2" type="Button" parent="Options/PanelC/MarginC/VBoxC/TabC/Controle" unique_id=1861936883]
+[node name="SpellB2" type="Button" parent="Options/PanelC/MarginC/VBoxC/TabC/Controle/Touches" unique_id=1861936883]
 layout_mode = 2
 size_flags_horizontal = 3
 text = "Z
@@ -1081,12 +1082,12 @@ text = "Z
 script = ExtResource("31_tamh2")
 action_name = "spell_2"
 
-[node name="SpellL3" type="Label" parent="Options/PanelC/MarginC/VBoxC/TabC/Controle" unique_id=1112731493]
+[node name="SpellL3" type="Label" parent="Options/PanelC/MarginC/VBoxC/TabC/Controle/Touches" unique_id=1112731493]
 layout_mode = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 text = "Sort 3"
 
-[node name="SpellB3" type="Button" parent="Options/PanelC/MarginC/VBoxC/TabC/Controle" unique_id=158535320]
+[node name="SpellB3" type="Button" parent="Options/PanelC/MarginC/VBoxC/TabC/Controle/Touches" unique_id=158535320]
 layout_mode = 2
 size_flags_horizontal = 3
 text = "Z
@@ -1094,53 +1095,87 @@ text = "Z
 script = ExtResource("31_tamh2")
 action_name = "spell_3"
 
-[node name="SpellL4" type="Label" parent="Options/PanelC/MarginC/VBoxC/TabC/Controle" unique_id=1943696663]
+[node name="SpellL4" type="Label" parent="Options/PanelC/MarginC/VBoxC/TabC/Controle/Touches" unique_id=1943696663]
 layout_mode = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 text = "Sort 4"
 
-[node name="SpellB4" type="Button" parent="Options/PanelC/MarginC/VBoxC/TabC/Controle" unique_id=100503782]
+[node name="SpellB4" type="Button" parent="Options/PanelC/MarginC/VBoxC/TabC/Controle/Touches" unique_id=100503782]
 layout_mode = 2
 size_flags_horizontal = 3
 text = "Sort 4"
 script = ExtResource("31_tamh2")
 action_name = "spell_4"
 
-[node name="SacL" type="Label" parent="Options/PanelC/MarginC/VBoxC/TabC/Controle" unique_id=768364120]
+[node name="SacL" type="Label" parent="Options/PanelC/MarginC/VBoxC/TabC/Controle/Touches" unique_id=768364120]
 layout_mode = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 text = "Inventaire"
 
-[node name="SacB" type="Button" parent="Options/PanelC/MarginC/VBoxC/TabC/Controle" unique_id=297169222]
+[node name="SacB" type="Button" parent="Options/PanelC/MarginC/VBoxC/TabC/Controle/Touches" unique_id=297169222]
 layout_mode = 2
 size_flags_horizontal = 3
 text = "Z"
 script = ExtResource("31_tamh2")
 action_name = "open_bag"
 
-[node name="QueteL" type="Label" parent="Options/PanelC/MarginC/VBoxC/TabC/Controle" unique_id=477313821]
+[node name="QueteL" type="Label" parent="Options/PanelC/MarginC/VBoxC/TabC/Controle/Touches" unique_id=477313821]
 layout_mode = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 text = "Quête"
 
-[node name="QueteB" type="Button" parent="Options/PanelC/MarginC/VBoxC/TabC/Controle" unique_id=1612976431]
+[node name="QueteB" type="Button" parent="Options/PanelC/MarginC/VBoxC/TabC/Controle/Touches" unique_id=1612976431]
 layout_mode = 2
 size_flags_horizontal = 3
 text = "Z"
 script = ExtResource("31_tamh2")
 action_name = "open_quest"
 
-[node name="MenuL" type="Label" parent="Options/PanelC/MarginC/VBoxC/TabC/Controle" unique_id=1245471139]
+[node name="MenuL" type="Label" parent="Options/PanelC/MarginC/VBoxC/TabC/Controle/Touches" unique_id=1245471139]
 layout_mode = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 text = "Menu"
 
-[node name="MenuB" type="Button" parent="Options/PanelC/MarginC/VBoxC/TabC/Controle" unique_id=1957155698]
+[node name="MenuB" type="Button" parent="Options/PanelC/MarginC/VBoxC/TabC/Controle/Touches" unique_id=1957155698]
 layout_mode = 2
 size_flags_horizontal = 3
 text = "Z"
 script = ExtResource("31_tamh2")
 action_name = "menu"
+
+[node name="Sensibilité" type="GridContainer" parent="Options/PanelC/MarginC/VBoxC/TabC/Controle" unique_id=1691095378]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_constants/h_separation = 15
+columns = 2
+metadata/_tab_index = 0
+metadata/_tab_name = "Affichage et Son"
+
+[node name="MouseSensib" type="Label" parent="Options/PanelC/MarginC/VBoxC/TabC/Controle/Sensibilité" unique_id=577062409]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "Sensibilitée souris"
+
+[node name="MouseSensibHSlider" type="HSlider" parent="Options/PanelC/MarginC/VBoxC/TabC/Controle/Sensibilité" unique_id=4751677]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 4
+mouse_default_cursor_shape = 2
+min_value = 0.05
+max_value = 2.0
+step = 0.05
+value = 1.0
+scrollable = false
+
+[node name="MouseInvertYL" type="Label" parent="Options/PanelC/MarginC/VBoxC/TabC/Controle/Sensibilité" unique_id=1388550330]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "Inversion souris Y"
+
+[node name="MouseInvertYLB" type="CheckButton" parent="Options/PanelC/MarginC/VBoxC/TabC/Controle/Sensibilité" unique_id=52199634]
+layout_mode = 2
+size_flags_horizontal = 0
+mouse_default_cursor_shape = 2
 
 [node name="CloseButton" type="Button" parent="Options/PanelC/MarginC/VBoxC" unique_id=121370059]
 layout_mode = 2
@@ -1979,28 +2014,30 @@ metadata/_custom_type_script = "uid://cxe0hpd6pnr8q"
 [connection signal="toggled" from="Options/PanelC/MarginC/VBoxC/TabC/Affichage/SSAOB" to="Options" method="_on_shadow_ssao_button_toggled"]
 [connection signal="value_changed" from="Options/PanelC/MarginC/VBoxC/TabC/Affichage/MusicHSlider" to="Options" method="_on_music_value_changed"]
 [connection signal="value_changed" from="Options/PanelC/MarginC/VBoxC/TabC/Affichage/SonHSlider" to="Options" method="_on_son_value_changed"]
-[connection signal="pressed" from="Options/PanelC/MarginC/VBoxC/TabC/Controle/AvancerB" to="Options/PanelC/MarginC/VBoxC/TabC/Controle/AvancerB" method="_on_pressed"]
-[connection signal="visibility_changed" from="Options/PanelC/MarginC/VBoxC/TabC/Controle/AvancerB" to="Options/PanelC/MarginC/VBoxC/TabC/Controle/AvancerB" method="_on_visibility_changed"]
-[connection signal="pressed" from="Options/PanelC/MarginC/VBoxC/TabC/Controle/ReculerB" to="Options/PanelC/MarginC/VBoxC/TabC/Controle/ReculerB" method="_on_pressed"]
-[connection signal="visibility_changed" from="Options/PanelC/MarginC/VBoxC/TabC/Controle/ReculerB" to="Options/PanelC/MarginC/VBoxC/TabC/Controle/ReculerB" method="_on_visibility_changed"]
-[connection signal="pressed" from="Options/PanelC/MarginC/VBoxC/TabC/Controle/PasGaucheB" to="Options/PanelC/MarginC/VBoxC/TabC/Controle/PasGaucheB" method="_on_pressed"]
-[connection signal="visibility_changed" from="Options/PanelC/MarginC/VBoxC/TabC/Controle/PasGaucheB" to="Options/PanelC/MarginC/VBoxC/TabC/Controle/PasGaucheB" method="_on_visibility_changed"]
-[connection signal="pressed" from="Options/PanelC/MarginC/VBoxC/TabC/Controle/PasDroiteB" to="Options/PanelC/MarginC/VBoxC/TabC/Controle/PasDroiteB" method="_on_pressed"]
-[connection signal="visibility_changed" from="Options/PanelC/MarginC/VBoxC/TabC/Controle/PasDroiteB" to="Options/PanelC/MarginC/VBoxC/TabC/Controle/PasDroiteB" method="_on_visibility_changed"]
-[connection signal="pressed" from="Options/PanelC/MarginC/VBoxC/TabC/Controle/SpellB1" to="Options/PanelC/MarginC/VBoxC/TabC/Controle/SpellB1" method="_on_pressed"]
-[connection signal="visibility_changed" from="Options/PanelC/MarginC/VBoxC/TabC/Controle/SpellB1" to="Options/PanelC/MarginC/VBoxC/TabC/Controle/SpellB1" method="_on_visibility_changed"]
-[connection signal="pressed" from="Options/PanelC/MarginC/VBoxC/TabC/Controle/SpellB2" to="Options/PanelC/MarginC/VBoxC/TabC/Controle/SpellB2" method="_on_pressed"]
-[connection signal="visibility_changed" from="Options/PanelC/MarginC/VBoxC/TabC/Controle/SpellB2" to="Options/PanelC/MarginC/VBoxC/TabC/Controle/SpellB2" method="_on_visibility_changed"]
-[connection signal="pressed" from="Options/PanelC/MarginC/VBoxC/TabC/Controle/SpellB3" to="Options/PanelC/MarginC/VBoxC/TabC/Controle/SpellB3" method="_on_pressed"]
-[connection signal="visibility_changed" from="Options/PanelC/MarginC/VBoxC/TabC/Controle/SpellB3" to="Options/PanelC/MarginC/VBoxC/TabC/Controle/SpellB3" method="_on_visibility_changed"]
-[connection signal="pressed" from="Options/PanelC/MarginC/VBoxC/TabC/Controle/SpellB4" to="Options/PanelC/MarginC/VBoxC/TabC/Controle/SpellB4" method="_on_pressed"]
-[connection signal="visibility_changed" from="Options/PanelC/MarginC/VBoxC/TabC/Controle/SpellB4" to="Options/PanelC/MarginC/VBoxC/TabC/Controle/SpellB4" method="_on_visibility_changed"]
-[connection signal="pressed" from="Options/PanelC/MarginC/VBoxC/TabC/Controle/SacB" to="Options/PanelC/MarginC/VBoxC/TabC/Controle/SacB" method="_on_pressed"]
-[connection signal="visibility_changed" from="Options/PanelC/MarginC/VBoxC/TabC/Controle/SacB" to="Options/PanelC/MarginC/VBoxC/TabC/Controle/SacB" method="_on_visibility_changed"]
-[connection signal="pressed" from="Options/PanelC/MarginC/VBoxC/TabC/Controle/QueteB" to="Options/PanelC/MarginC/VBoxC/TabC/Controle/QueteB" method="_on_pressed"]
-[connection signal="visibility_changed" from="Options/PanelC/MarginC/VBoxC/TabC/Controle/QueteB" to="Options/PanelC/MarginC/VBoxC/TabC/Controle/QueteB" method="_on_visibility_changed"]
-[connection signal="pressed" from="Options/PanelC/MarginC/VBoxC/TabC/Controle/MenuB" to="Options/PanelC/MarginC/VBoxC/TabC/Controle/MenuB" method="_on_pressed"]
-[connection signal="visibility_changed" from="Options/PanelC/MarginC/VBoxC/TabC/Controle/MenuB" to="Options/PanelC/MarginC/VBoxC/TabC/Controle/MenuB" method="_on_visibility_changed"]
+[connection signal="pressed" from="Options/PanelC/MarginC/VBoxC/TabC/Controle/Touches/AvancerB" to="Options/PanelC/MarginC/VBoxC/TabC/Controle/Touches/AvancerB" method="_on_pressed"]
+[connection signal="visibility_changed" from="Options/PanelC/MarginC/VBoxC/TabC/Controle/Touches/AvancerB" to="Options/PanelC/MarginC/VBoxC/TabC/Controle/Touches/AvancerB" method="_on_visibility_changed"]
+[connection signal="pressed" from="Options/PanelC/MarginC/VBoxC/TabC/Controle/Touches/ReculerB" to="Options/PanelC/MarginC/VBoxC/TabC/Controle/Touches/ReculerB" method="_on_pressed"]
+[connection signal="visibility_changed" from="Options/PanelC/MarginC/VBoxC/TabC/Controle/Touches/ReculerB" to="Options/PanelC/MarginC/VBoxC/TabC/Controle/Touches/ReculerB" method="_on_visibility_changed"]
+[connection signal="pressed" from="Options/PanelC/MarginC/VBoxC/TabC/Controle/Touches/PasGaucheB" to="Options/PanelC/MarginC/VBoxC/TabC/Controle/Touches/PasGaucheB" method="_on_pressed"]
+[connection signal="visibility_changed" from="Options/PanelC/MarginC/VBoxC/TabC/Controle/Touches/PasGaucheB" to="Options/PanelC/MarginC/VBoxC/TabC/Controle/Touches/PasGaucheB" method="_on_visibility_changed"]
+[connection signal="pressed" from="Options/PanelC/MarginC/VBoxC/TabC/Controle/Touches/PasDroiteB" to="Options/PanelC/MarginC/VBoxC/TabC/Controle/Touches/PasDroiteB" method="_on_pressed"]
+[connection signal="visibility_changed" from="Options/PanelC/MarginC/VBoxC/TabC/Controle/Touches/PasDroiteB" to="Options/PanelC/MarginC/VBoxC/TabC/Controle/Touches/PasDroiteB" method="_on_visibility_changed"]
+[connection signal="pressed" from="Options/PanelC/MarginC/VBoxC/TabC/Controle/Touches/SpellB1" to="Options/PanelC/MarginC/VBoxC/TabC/Controle/Touches/SpellB1" method="_on_pressed"]
+[connection signal="visibility_changed" from="Options/PanelC/MarginC/VBoxC/TabC/Controle/Touches/SpellB1" to="Options/PanelC/MarginC/VBoxC/TabC/Controle/Touches/SpellB1" method="_on_visibility_changed"]
+[connection signal="pressed" from="Options/PanelC/MarginC/VBoxC/TabC/Controle/Touches/SpellB2" to="Options/PanelC/MarginC/VBoxC/TabC/Controle/Touches/SpellB2" method="_on_pressed"]
+[connection signal="visibility_changed" from="Options/PanelC/MarginC/VBoxC/TabC/Controle/Touches/SpellB2" to="Options/PanelC/MarginC/VBoxC/TabC/Controle/Touches/SpellB2" method="_on_visibility_changed"]
+[connection signal="pressed" from="Options/PanelC/MarginC/VBoxC/TabC/Controle/Touches/SpellB3" to="Options/PanelC/MarginC/VBoxC/TabC/Controle/Touches/SpellB3" method="_on_pressed"]
+[connection signal="visibility_changed" from="Options/PanelC/MarginC/VBoxC/TabC/Controle/Touches/SpellB3" to="Options/PanelC/MarginC/VBoxC/TabC/Controle/Touches/SpellB3" method="_on_visibility_changed"]
+[connection signal="pressed" from="Options/PanelC/MarginC/VBoxC/TabC/Controle/Touches/SpellB4" to="Options/PanelC/MarginC/VBoxC/TabC/Controle/Touches/SpellB4" method="_on_pressed"]
+[connection signal="visibility_changed" from="Options/PanelC/MarginC/VBoxC/TabC/Controle/Touches/SpellB4" to="Options/PanelC/MarginC/VBoxC/TabC/Controle/Touches/SpellB4" method="_on_visibility_changed"]
+[connection signal="pressed" from="Options/PanelC/MarginC/VBoxC/TabC/Controle/Touches/SacB" to="Options/PanelC/MarginC/VBoxC/TabC/Controle/Touches/SacB" method="_on_pressed"]
+[connection signal="visibility_changed" from="Options/PanelC/MarginC/VBoxC/TabC/Controle/Touches/SacB" to="Options/PanelC/MarginC/VBoxC/TabC/Controle/Touches/SacB" method="_on_visibility_changed"]
+[connection signal="pressed" from="Options/PanelC/MarginC/VBoxC/TabC/Controle/Touches/QueteB" to="Options/PanelC/MarginC/VBoxC/TabC/Controle/Touches/QueteB" method="_on_pressed"]
+[connection signal="visibility_changed" from="Options/PanelC/MarginC/VBoxC/TabC/Controle/Touches/QueteB" to="Options/PanelC/MarginC/VBoxC/TabC/Controle/Touches/QueteB" method="_on_visibility_changed"]
+[connection signal="pressed" from="Options/PanelC/MarginC/VBoxC/TabC/Controle/Touches/MenuB" to="Options/PanelC/MarginC/VBoxC/TabC/Controle/Touches/MenuB" method="_on_pressed"]
+[connection signal="visibility_changed" from="Options/PanelC/MarginC/VBoxC/TabC/Controle/Touches/MenuB" to="Options/PanelC/MarginC/VBoxC/TabC/Controle/Touches/MenuB" method="_on_visibility_changed"]
+[connection signal="value_changed" from="Options/PanelC/MarginC/VBoxC/TabC/Controle/Sensibilité/MouseSensibHSlider" to="Options" method="_on_mouse_sensib_h_slider_value_changed"]
+[connection signal="toggled" from="Options/PanelC/MarginC/VBoxC/TabC/Controle/Sensibilité/MouseInvertYLB" to="Options" method="_on_mouse_invert_ylb_toggled"]
 [connection signal="pressed" from="Options/PanelC/MarginC/VBoxC/CloseButton" to="Options" method="_on_close_button_pressed"]
 [connection signal="visibility_changed" from="DialogGui" to="." method="update_mouse_mode"]
 [connection signal="visibility_changed" from="DialogGui" to="DialogGui" method="_on_visibility_changed"]

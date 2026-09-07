@@ -54,7 +54,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -5)
 script = ExtResource("3_khsc5")
 _anim = "Melee_2H_Attack_Slice"
 _description = "Le Barbare
-Equipé d’une hache à deux mains, il possède une forte vitalité. Il a une attaque solide, ses critiques sont dévastateurs mais sa défense est moyenne.
+Équipé d’une hache à deux mains, il possède une forte vitalité. Il a une attaque solide, ses critiques sont dévastateurs mais sa défense est moyenne.
 [ul]
 Hache à deux mains : 2 + niveau (+1 sur critique)
 Défense : 1 + niveau
@@ -92,7 +92,7 @@ transform = Transform3D(0.93969256, 0, 0.3420201, 0, 1, 0, -0.3420201, 0, 0.9396
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -5)
 script = ExtResource("3_khsc5")
 _description = "L’Ingénieur [color=red]Disponible mais inachevé[/color] 
-Armé de sa  clef à molette,  il est capable de créer une  tourelle automatique pour  combattre à sa place. 
+Armé de sa  clef à molette,  il est capable de créer une  tourelle automatique pour combattre à sa place. 
 [ul]
 Clef à molette :  1 + niveau / 2,  Tourelle : niveau + 1 automatique.
 Défense :  1 + niveau
@@ -113,7 +113,7 @@ shape = SubResource("CylinderShape3D_b02ke")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -5)
 script = ExtResource("3_khsc5")
 _description = "Le Chevalier
-Equipée d'une épée et d'une solide Armure, il as une attaque solide et une défense solide. Il possede un sort lui permettant d'augmenter sa défense au détriment de son attaque.
+Équipé d'une épée et d'une solide armure, il as une attaque solide et une défense solide. Il possède un sort lui permettant d'augmenter sa défense au détriment de son attaque.
 [ul]
 Epée : 2 + niveau
 Défense : 2 + niveau
@@ -160,7 +160,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -5)
 script = ExtResource("3_khsc5")
 _anim = "Ranged_Bow_Draw"
 _description = "Le Ranger
-Equipé d’une dague et d’un arc, il est capable d’attaque à distance et au corps à corps. Son arc est redoutable, mais il est très fragile au corps à corps.
+Équipé d’une dague et d’un arc, il est capable d’attaquer à distance et au corps à corps. Son arc est redoutable, mais il est très fragile au corps à corps.
 [ul]
 Arc : 2 + niveau (dont une automatique), Dague : 1 + niveau / 2
 Défense : 2 + niveau / 2
@@ -182,7 +182,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -5)
 script = ExtResource("3_khsc5")
 _anim = "Melee_Dualwield_Attack_Chop"
 _description = "La Voleuse
-Equipée d’une dague dans chaque main, elle inflige deux attaques à chaque frappe. De plus, si elle est hors de la vision de son adversaire, elle inflige des dégâts supplémentaires. Elle possède également un sort lui permettant de disparaître pour un court instant.
+Équipée d’une dague dans chaque main, elle inflige deux attaques à chaque frappe. De plus, si elle est hors de la vision de son adversaire, elle inflige des dégâts supplémentaires. Elle possède également un sort lui permettant de disparaître pour un court instant.
 [ul]
 Main droite : 1 + niveau (+1 automatique dans le dos), main gauche : 2
 Défense : 2 + niveau / 2
@@ -353,7 +353,7 @@ offset_top = -23.0
 offset_right = 556.0
 grow_horizontal = 2
 grow_vertical = 0
-text = "Choissisez votre Personnage"
+text = "Choisissez votre Personnage"
 horizontal_alignment = 1
 
 [node name="Exit" type="Button" parent="GameStartGui/Control" unique_id=1690805234]

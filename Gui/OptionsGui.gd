@@ -21,6 +21,12 @@ extends GameBaseControl
 
 @onready var _damage_log_button = $PanelC/MarginC/VBoxC/TabC/Affichage/DamageM
 
+@onready var _mouse_sensib_label = $"PanelC/MarginC/VBoxC/TabC/Controle/Sensibilité/MouseSensib"
+@onready var _mouse_sensib_slider = $"PanelC/MarginC/VBoxC/TabC/Controle/Sensibilité/MouseSensibHSlider"
+
+@onready var _mouse_invert_y = $"PanelC/MarginC/VBoxC/TabC/Controle/Sensibilité/MouseInvertYLB"
+
+
 func _ready() -> void:
 	hide()
 	_scale_mode_button.get_popup().id_pressed.connect(_on_scale_mode_id_pressed)
@@ -63,7 +69,11 @@ func _on_applied() -> void :
 		Options.DamageDisplayMode.FLOAT : _damage_log_button.text = "Flottant"
 		Options.DamageDisplayMode.CONSOLE : _damage_log_button.text = "Console"
 		Options.DamageDisplayMode.BOTH : _damage_log_button.text = "Les Deux"
+
+	_mouse_sensib_label.text = "Sensibilitée souris (%.2f)"%options.get_mouse_sensib()
+	_mouse_sensib_slider.value = options.get_mouse_sensib()
 	
+	_mouse_invert_y.button_pressed = options.is_mouse_y_invert()
 
 func _on_music_value_changed(value: float) -> void:
 	options.set_audio_backbround_vol(value)
@@ -115,4 +125,14 @@ func _on_damage_log_id_pressed(id: int) -> void:
 		0 : options.set_damage_display(Options.DamageDisplayMode.FLOAT)
 		1 : options.set_damage_display(Options.DamageDisplayMode.CONSOLE)
 		2 : options.set_damage_display(Options.DamageDisplayMode.BOTH)
+	options.apply_and_save()
+
+
+func _on_mouse_sensib_h_slider_value_changed(value: float) -> void:
+	options.set_mouse_sensib(value)
+	options.apply_and_save()
+
+
+func _on_mouse_invert_ylb_toggled(toggled_on: bool) -> void:
+	options.set_mouse_y_invert(toggled_on)
 	options.apply_and_save()

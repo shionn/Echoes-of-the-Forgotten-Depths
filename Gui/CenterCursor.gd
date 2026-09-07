@@ -8,8 +8,15 @@ extends GameBaseControl
 @onready var _speak = $Speak as Control
 
 const _tilt_limit = deg_to_rad(50)
-const _mouse_sensitivity = 0.01
 const _max_range: float = 20
+var _mouse_sensitivity = 0.01
+var _mouse_invert_y = false
+
+func _ready() -> void:
+	_mouse_sensitivity = options.get_mouse_sensib()/100.0
+	_mouse_invert_y = options.is_mouse_y_invert()
+	options.applied.connect(func (): _mouse_sensitivity = options.get_mouse_sensib()/100.0)
+	options.applied.connect(func (): _mouse_invert_y = options.is_mouse_y_invert())
 
 func _physics_process(_delta: float) -> void:
 	visible = Input.mouse_mode == Input.MOUSE_MODE_CAPTURED and not player.isDead()
@@ -39,6 +46,7 @@ func _unhandled_input(event: InputEvent) -> void:
 		if abs(event.relative.y) > 50 or abs(event.relative.x) > 50 :
 			return
 		var camera = get_viewport().get_camera_3d()
-		camera.rotation.x -= event.relative.y * _mouse_sensitivity
+		if _mouse_invert_y : camera.rotation.x += event.relative.y * _mouse_sensitivity
+		else : camera.rotation.x -= event.relative.y * _mouse_sensitivity
 		camera.rotation.x = clampf(camera.rotation.x, -_tilt_limit, _tilt_limit)
 		camera.rotation.y += -event.relative.x * _mouse_sensitivity
