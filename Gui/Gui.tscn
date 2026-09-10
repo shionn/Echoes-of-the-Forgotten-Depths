@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://c1q648y44m6n5" path="res://Gui/Gui.gd" id="1_i3re6"]
 [ext_resource type="Script" uid="uid://d2auu0tiunlbj" path="res://Gui/CenterCursor.gd" id="2_60sjt"]
+[ext_resource type="Script" uid="uid://dsikirlqnddj6" path="res://Gui/Hit.gd" id="2_impmy"]
 [ext_resource type="Texture2D" uid="uid://brsj54noj8ouj" path="res://Gui/Assets/kenney/cursor-pack/line_cross.png" id="3_i3re6"]
 [ext_resource type="Texture2D" uid="uid://tem7p5u78uq0" path="res://Gui/Assets/kenney/cursor-pack/tool_sword_a.png" id="4_60sjt"]
 [ext_resource type="Texture2D" uid="uid://bttyvn7xoe6wl" path="res://Gui/Assets/kenney/cursor-pack/hand_open.png" id="5_wbke4"]
@@ -47,6 +48,75 @@
 [ext_resource type="Script" uid="uid://baohqgm68smai" path="res://Gui/ObjectifQuestDone.gd" id="42_mnphl"]
 [ext_resource type="AudioStream" uid="uid://bwv1bxhlk2lsg" path="res://Audio/win-sound-1/win sound 1.wav" id="43_2m3pn"]
 [ext_resource type="Script" uid="uid://cxe0hpd6pnr8q" path="res://Gui/Dialog.gd" id="47_xkmul"]
+
+[sub_resource type="Gradient" id="Gradient_xkmul"]
+offsets = PackedFloat32Array(0, 0.66, 1)
+colors = PackedColorArray(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.5019608)
+metadata/_snap_enabled = true
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_b02ke"]
+gradient = SubResource("Gradient_xkmul")
+fill_to = Vector2(0, 1)
+
+[sub_resource type="Animation" id="Animation_impmy"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+
+[sub_resource type="Animation" id="Animation_qn4ky"]
+resource_name = "blink"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5, 1),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0.033333335, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_ff7ax"]
+_data = {
+&"RESET": SubResource("Animation_impmy"),
+&"blink": SubResource("Animation_qn4ky")
+}
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_8rxp0"]
 bg_color = Color(1, 0.94509804, 0.8235294, 1)
@@ -257,6 +327,21 @@ grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
 script = ExtResource("1_i3re6")
+
+[node name="Hit" type="TextureRect" parent="." unique_id=615678424]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+texture = SubResource("GradientTexture2D_b02ke")
+script = ExtResource("2_impmy")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Hit" unique_id=1218082659]
+libraries/ = SubResource("AnimationLibrary_ff7ax")
 
 [node name="CenterCursor" type="Control" parent="." unique_id=1488707363]
 layout_mode = 1

@@ -13,6 +13,7 @@ const _max_range: float = 20
 const _atk_range: float = 2
 
 signal lvl_up()
+signal hitten(damage)
 
 var _state : State = State.MOVE
 var _attacked_monster : Monster
@@ -90,6 +91,7 @@ func receive_atk(nb_atk: int, monster:Monster) -> void:
 		
 	if deg > 0 :
 		$HumanYell3.play()
+		hitten.emit(deg)
 		pv = max(pv - deg, 0)
 		if pv > 0:
 			_start_animation("Hit_A")
