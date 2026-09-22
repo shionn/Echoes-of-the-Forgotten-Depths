@@ -1564,6 +1564,13 @@ mouse_default_cursor_shape = 2
 text = "Chambres de l'Équilibre"
 icon = ExtResource("34_w65rx")
 
+[node name="Dungeon04" type="Button" parent="ExitAuberge/PanelContainer/MarginContainer/VBoxContainer" unique_id=678408340]
+custom_minimum_size = Vector2(250, 0)
+layout_mode = 2
+mouse_default_cursor_shape = 2
+text = "TODO 04"
+icon = ExtResource("34_w65rx")
+
 [node name="CloseButton" type="Button" parent="ExitAuberge/PanelContainer/MarginContainer/VBoxContainer" unique_id=1231563995]
 layout_mode = 2
 size_flags_horizontal = 3
@@ -2137,6 +2144,7 @@ metadata/_custom_type_script = "uid://cxe0hpd6pnr8q"
 [connection signal="pressed" from="ExitAuberge/PanelContainer/MarginContainer/VBoxContainer/Dungeon01" to="ExitAuberge" method="_on_dungeon_01_pressed"]
 [connection signal="pressed" from="ExitAuberge/PanelContainer/MarginContainer/VBoxContainer/Dungeon02" to="ExitAuberge" method="_on_dungeon_02_pressed"]
 [connection signal="pressed" from="ExitAuberge/PanelContainer/MarginContainer/VBoxContainer/Dungeon03" to="ExitAuberge" method="_on_dungeon_03_pressed"]
+[connection signal="pressed" from="ExitAuberge/PanelContainer/MarginContainer/VBoxContainer/Dungeon04" to="ExitAuberge" method="_on_dungeon_04_pressed"]
 [connection signal="pressed" from="ExitAuberge/PanelContainer/MarginContainer/VBoxContainer/CloseButton" to="ExitAuberge" method="hide"]
 [connection signal="visibility_changed" from="ExitDungeon" to="." method="update_mouse_mode"]
 [connection signal="pressed" from="ExitDungeon/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/Auberge" to="ExitDungeon" method="_on_auberge_pressed"]
