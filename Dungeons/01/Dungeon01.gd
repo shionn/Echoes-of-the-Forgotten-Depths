@@ -6,6 +6,8 @@ func _ready() -> void:
 		$"BossRoom/Skeleton Golem".loot_obj = Items.ItemName.SkullHead_Dungeon1
 	if quest_book.dungeon_01_have_potion.is_done() :
 		$BossRoom/bookcase_single_decoratedB/potion_huge_green2.queue_free()
+	if bag.have(Items.ItemName.PotionVieMineur) : 
+		$"Entrance/Skeleton Minion 1".loot_obj = Items.ItemName.None
 	bag.item_loot.connect(_on_item_loot)
 	bag.item_drop.connect(_on_item_drop)
 	
