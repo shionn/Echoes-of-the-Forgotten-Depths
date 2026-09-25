@@ -4,18 +4,74 @@
 [ext_resource type="Script" uid="uid://clj45v2evnyes" path="res://Dungeons/04/dungeon_04.gd" id="1_fgds8"]
 [ext_resource type="PackedScene" uid="uid://7em3lt4lnfwr" path="res://Assets/Dungeons/Wall/wall.gltf" id="2_ordsp"]
 [ext_resource type="PackedScene" uid="uid://c6i85c8iqhfgd" path="res://Assets/Dungeons/Wall/TSplit/wall_Tsplit.gltf" id="3_oj485"]
+[ext_resource type="Script" uid="uid://cncib7kv0ld41" path="res://Dungeons/04/secret_wall.gd" id="3_v3yd4"]
 [ext_resource type="PackedScene" uid="uid://0fn6al4q3iav" path="res://Assets/Dungeons/Wall/Corner/wall_corner.gltf" id="4_hsoyh"]
+[ext_resource type="Script" uid="uid://bpgb3pwbq61mh" path="res://Game/Interactable.gd" id="4_m0lar"]
 [ext_resource type="PackedScene" uid="uid://dnj0c0ut1hd35" path="res://Assets/Scenes/Wall_Doorway.tscn" id="5_dhcam"]
+[ext_resource type="AudioStream" uid="uid://ce7drpk5sjkcm" path="res://Audio/KenneyRpgAudio/metalClick.ogg" id="5_m0lar"]
 [ext_resource type="PackedScene" uid="uid://cl36lcn4lo2eq" path="res://Assets/Scenes/Torch_Mounted.tscn" id="5_uivu1"]
 [ext_resource type="PackedScene" uid="uid://dalp31cf3de8a" path="res://Assets/Dungeons/Wall/Half/wall_half.gltf" id="6_aimia"]
+[ext_resource type="AudioStream" uid="uid://dwe540ehhi37p" path="res://Audio/80-CC0-RPG-SFX/item_stone_01.ogg" id="6_ya2wp"]
+[ext_resource type="PackedScene" uid="uid://mfxyh576b4gl" path="res://Assets/Dungeons/Wall/wall_open_scaffold.gltf" id="7_dy2i5"]
 [ext_resource type="PackedScene" uid="uid://dholpdwxyyxfv" path="res://Assets/Dungeons/Wall/Crossing/wall_crossing.gltf" id="7_ordsp"]
 [ext_resource type="PackedScene" uid="uid://djyg2cdin7gyb" path="res://Assets/Scenes/DungeonExit.tscn" id="9_dhcam"]
 [ext_resource type="AudioStream" uid="uid://61hk6iwxjiwe" path="res://Audio/DungeonThemes/dungeon.ogg" id="10_aimia"]
 [ext_resource type="PackedScene" uid="uid://l4ocv1r3b2jl" path="res://Game/DungeonEnvironment.tscn" id="11_fgds8"]
 [ext_resource type="PackedScene" uid="uid://kwbu30ltyyru" path="res://Assets/Dungeons/Floor/Large/floor_dirt_large.gltf" id="12_fgds8"]
 
+[sub_resource type="BoxShape3D" id="BoxShape3D_b02ke"]
+size = Vector3(0.6, 0.35, 0.15)
+
 [node name="Dungeon04" type="Node3D" unique_id=1782630631]
 script = ExtResource("1_fgds8")
+
+[node name="SecretRoom" type="Node3D" parent="." unique_id=1961476011]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 18, 0, 18)
+
+[node name="Wall" parent="SecretRoom" unique_id=1452889366 instance=ExtResource("2_ordsp")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 4, 0, 0)
+script = ExtResource("3_v3yd4")
+
+[node name="Brick1" type="Node3D" parent="SecretRoom/Wall" unique_id=587686822]
+script = ExtResource("4_m0lar")
+
+[node name="Area3D" type="Area3D" parent="SecretRoom/Wall/Brick1" unique_id=846509702]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.75, 2.55, -0.3)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="SecretRoom/Wall/Brick1/Area3D" unique_id=1045554767]
+shape = SubResource("BoxShape3D_b02ke")
+
+[node name="Brick2" type="Node3D" parent="SecretRoom/Wall" unique_id=1722353899]
+script = ExtResource("4_m0lar")
+
+[node name="Area3D" type="Area3D" parent="SecretRoom/Wall/Brick2" unique_id=631686246]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.85, 2.3, -0.3)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="SecretRoom/Wall/Brick2/Area3D" unique_id=854827611]
+shape = SubResource("BoxShape3D_b02ke")
+
+[node name="Brick3" type="Node3D" parent="SecretRoom/Wall" unique_id=718219228]
+script = ExtResource("4_m0lar")
+
+[node name="Area3D" type="Area3D" parent="SecretRoom/Wall/Brick3" unique_id=1615690532]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.55, 1.35, -0.3)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="SecretRoom/Wall/Brick3/Area3D" unique_id=1699741745]
+shape = SubResource("BoxShape3D_b02ke")
+
+[node name="Audio" type="AudioStreamPlayer3D" parent="SecretRoom/Wall" unique_id=360477668]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, 0)
+stream = ExtResource("5_m0lar")
+bus = &"Effet"
+
+[node name="WallOpen" parent="SecretRoom" unique_id=1774263886 instance=ExtResource("7_dy2i5")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 4, 0, 0)
+visible = false
+
+[node name="Open" type="AudioStreamPlayer3D" parent="SecretRoom/WallOpen" unique_id=1656040589]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, 0)
+stream = ExtResource("6_ya2wp")
+bus = &"Effet"
 
 [node name="Floor" type="Node3D" parent="." unique_id=419919641]
 
@@ -737,7 +793,7 @@ transform = Transform3D(1.3113416e-07, 0, 1, 0, 1, 0, -1, 0, 1.3113416e-07, 38, 
 [node name="wall105" parent="Wall" unique_id=1053142914 instance=ExtResource("2_ordsp")]
 transform = Transform3D(1.3113416e-07, 0, 1, 0, 1, 0, -1, 0, 1.3113416e-07, 38, 0, 62)
 
-[node name="wall110" parent="Wall" unique_id=1452889366 instance=ExtResource("2_ordsp")]
+[node name="wall110" parent="Wall" unique_id=849228033 instance=ExtResource("2_ordsp")]
 transform = Transform3D(1.3113416e-07, 0, 1, 0, 1, 0, -1, 0, 1.3113416e-07, 38, 0, 58)
 
 [node name="wall89" parent="Wall" unique_id=1655639081 instance=ExtResource("2_ordsp")]
@@ -1942,3 +1998,7 @@ transform = Transform3D(-1, 8.742278e-08, 0, -8.742278e-08, -1, 0, 0, 0, 1, 24, 
 
 [node name="floor_dirt_large60" parent="Roof" unique_id=1352618729 instance=ExtResource("12_fgds8")]
 transform = Transform3D(-1, 8.742278e-08, 0, -8.742278e-08, -1, 0, 0, 0, 1, 24, 0, -24)
+
+[connection signal="activate" from="SecretRoom/Wall/Brick1" to="SecretRoom/Wall" method="_on_brick_1_activate"]
+[connection signal="activate" from="SecretRoom/Wall/Brick2" to="SecretRoom/Wall" method="_on_brick_2_activate"]
+[connection signal="activate" from="SecretRoom/Wall/Brick3" to="SecretRoom/Wall" method="_on_brick_3_activate"]
