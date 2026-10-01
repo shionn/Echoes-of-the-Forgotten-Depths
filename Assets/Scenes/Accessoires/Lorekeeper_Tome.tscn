@@ -2,6 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://ds1umuqbncwso" path="res://Assets/Characters/MonthlySeries6/Accessoires/Lorekeeper_Tome.gltf" id="1_5bjon"]
 [ext_resource type="PackedScene" uid="uid://dhqevcfe27wis" path="res://Assets/BinbunVFX/fire_effects/effects/Fire/fire_candle.tscn" id="2_nxohp"]
+[ext_resource type="PackedScene" uid="uid://1761jojgh34h" path="res://Assets/Scenes/Lights/candle_light.tscn" id="3_nxohp"]
 
 [node name="Lorekeeper_Tome" unique_id=830294022 instance=ExtResource("1_5bjon")]
 
@@ -11,10 +12,10 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.46973515, 1.5181398, -0.39
 [node name="Fire_Candle2" parent="." index="2" unique_id=1781882670 instance=ExtResource("2_nxohp")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.49445552, 1.4559648, -0.40146282)
 
-[node name="Fire_Candle3" parent="." index="3" unique_id=766774270 instance=ExtResource("2_nxohp")]
+[node name="CandleLight" parent="." index="3" unique_id=828694113 instance=ExtResource("3_nxohp")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.3621643, 1.5281979, -0.3750243)
 
-[node name="Fire_Candle4" parent="." index="4" unique_id=1662236059 instance=ExtResource("2_nxohp")]
+[node name="CandleLight2" parent="." index="4" unique_id=1648983680 instance=ExtResource("3_nxohp")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.33885336, 1.6515275, -0.4400373)
 
 [node name="Fire_Candle5" parent="." index="5" unique_id=284945028 instance=ExtResource("2_nxohp")]

@@ -1,9 +1,15 @@
 [gd_scene format=3 uid="uid://efyawar5mf24"]
 
 [ext_resource type="PackedScene" uid="uid://dbaa76cyf7r3p" path="res://Assets/Bits/RpgTools/lantern.gltf" id="1_n2bbh"]
-[ext_resource type="PackedScene" uid="uid://dhqevcfe27wis" path="res://Assets/BinbunVFX/fire_effects/effects/Fire/fire_candle.tscn" id="2_g3nr3"]
+[ext_resource type="PackedScene" uid="uid://1761jojgh34h" path="res://Assets/Scenes/Lights/candle_light.tscn" id="2_n2bbh"]
 
 [node name="lantern" unique_id=557039301 instance=ExtResource("1_n2bbh")]
 
-[node name="Fire_Candle" parent="." index="1" unique_id=87093015 instance=ExtResource("2_g3nr3")]
+[node name="lantern" parent="." index="0" unique_id=68504405]
+layers = 1024
+
+[node name="lantern_handle" parent="lantern" index="0" unique_id=385264084]
+layers = 1024
+
+[node name="CandleLight" parent="." index="1" unique_id=828694113 instance=ExtResource("2_n2bbh")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.32918558, 0)

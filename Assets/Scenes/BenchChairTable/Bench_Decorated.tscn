@@ -2,14 +2,15 @@
 
 [ext_resource type="PackedScene" uid="uid://dn0yqbvgem56e" path="res://Assets/Halloween/Bench/bench_decorated.gltf" id="1_6o30v"]
 [ext_resource type="PackedScene" uid="uid://dhqevcfe27wis" path="res://Assets/BinbunVFX/fire_effects/effects/Fire/fire_candle.tscn" id="2_l323d"]
+[ext_resource type="PackedScene" uid="uid://1761jojgh34h" path="res://Assets/Scenes/Lights/candle_light.tscn" id="3_l323d"]
 
 [node name="bench_decorated" unique_id=1294102811 instance=ExtResource("1_6o30v")]
 
 [node name="Fire_Candle1" parent="." index="1" unique_id=194898062 instance=ExtResource("2_l323d")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.36873338, 1.5206201, 0.06806336)
 
-[node name="Fire_Candle2" parent="." index="2" unique_id=200381550 instance=ExtResource("2_l323d")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.37785965, 1.6729895, -0.2076954)
-
-[node name="Fire_Candle3" parent="." index="3" unique_id=135563686 instance=ExtResource("2_l323d")]
+[node name="Fire_Candle3" parent="." index="2" unique_id=135563686 instance=ExtResource("2_l323d")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5514621, 1.4730159, -0.056835957)
+
+[node name="CandleLight" parent="." index="3" unique_id=828694113 instance=ExtResource("3_l323d")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.37785965, 1.6729895, -0.2076954)

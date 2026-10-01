@@ -2,6 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://uxd0obfysrmt" path="res://Assets/Dungeons/Candle/candle_triple.gltf" id="1_ht2g2"]
 [ext_resource type="PackedScene" uid="uid://dhqevcfe27wis" path="res://Assets/BinbunVFX/fire_effects/effects/Fire/fire_candle.tscn" id="2_ubs35"]
+[ext_resource type="PackedScene" uid="uid://1761jojgh34h" path="res://Assets/Scenes/Lights/candle_light.tscn" id="3_ubs35"]
 
 [node name="candle_triple" unique_id=65124121 instance=ExtResource("1_ht2g2")]
 
@@ -11,5 +12,5 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.7, 0)
 [node name="Fire_Candle2" parent="." index="2" unique_id=2074811370 instance=ExtResource("2_ubs35")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.2, 0.6268558, 0.13202357)
 
-[node name="Fire_Candle3" parent="." index="3" unique_id=592986341 instance=ExtResource("2_ubs35")]
+[node name="CandleLight" parent="." index="3" unique_id=828694113 instance=ExtResource("3_ubs35")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.2390403, 0.8704808, -0.04815151)

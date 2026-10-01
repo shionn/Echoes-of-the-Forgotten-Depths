@@ -1,0 +1,17 @@
+[gd_scene format=3 uid="uid://1761jojgh34h"]
+
+[ext_resource type="PackedScene" uid="uid://dhqevcfe27wis" path="res://Assets/BinbunVFX/fire_effects/effects/Fire/fire_candle.tscn" id="1_jgx7l"]
+
+[node name="CandleLight" type="Node3D" unique_id=828694113]
+
+[node name="Fire_Candle3" parent="." unique_id=1427700740 instance=ExtResource("1_jgx7l")]
+
+[node name="OmniLight3D" type="OmniLight3D" parent="Fire_Candle3" unique_id=747247896]
+light_color = Color(1, 0.53333336, 0.13333334, 1)
+light_energy = 2.0
+light_size = 0.1
+light_specular = 0.0
+shadow_enabled = true
+shadow_blur = 0.5
+shadow_caster_mask = 4294966271
+omni_range = 2.0

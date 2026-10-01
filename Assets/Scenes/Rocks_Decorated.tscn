@@ -2,25 +2,26 @@
 
 [ext_resource type="PackedScene" uid="uid://nk8lovrnrinx" path="res://Assets/Dungeons/Rocks/rocks_decorated.gltf" id="1_ys6q8"]
 [ext_resource type="PackedScene" uid="uid://dhqevcfe27wis" path="res://Assets/BinbunVFX/fire_effects/effects/Fire/fire_candle.tscn" id="2_xkxqt"]
+[ext_resource type="PackedScene" uid="uid://1761jojgh34h" path="res://Assets/Scenes/Lights/candle_light.tscn" id="3_xkxqt"]
 
 [node name="rocks_decorated2" unique_id=1045865978 instance=ExtResource("1_ys6q8")]
 
 [node name="Fire_Candle1" parent="." index="1" unique_id=90976114 instance=ExtResource("2_xkxqt")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.010560989, 2.006746, -0.0367662)
 
-[node name="Fire_Candle2" parent="." index="2" unique_id=1531106014 instance=ExtResource("2_xkxqt")]
+[node name="CandleLight2" parent="." index="2" unique_id=828694113 instance=ExtResource("3_xkxqt")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.24650854, 2.174907, -0.11776188)
 
 [node name="Fire_Candle6" parent="." index="3" unique_id=955010714 instance=ExtResource("2_xkxqt")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.17608456, 1.0999999, -0.92705417)
 
-[node name="Fire_Candle7" parent="." index="4" unique_id=1814646169 instance=ExtResource("2_xkxqt")]
+[node name="CandleLight" parent="." index="4" unique_id=471000209 instance=ExtResource("3_xkxqt")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.83624905, 1.2395825, 0.7668017)
 
 [node name="Fire_Candle3" parent="." index="5" unique_id=1525736179 instance=ExtResource("2_xkxqt")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.23923735, 1.9315947, 0.06537716)
 
-[node name="Fire_Candle4" parent="." index="6" unique_id=419993191 instance=ExtResource("2_xkxqt")]
+[node name="CandleLight3" parent="." index="6" unique_id=1295527744 instance=ExtResource("3_xkxqt")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.67037237, 1.3408895, 0.0778569)
 
 [node name="Fire_Candle5" parent="." index="7" unique_id=401817019 instance=ExtResource("2_xkxqt")]

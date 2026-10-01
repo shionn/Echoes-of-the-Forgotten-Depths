@@ -144,7 +144,7 @@ material = SubResource("ShaderMaterial_1x0cp")
 
 [node name="torch_mounted" unique_id=1245216849 instance=ExtResource("1_6cvwo")]
 
-[node name="torch_mounted" parent="." index="0" unique_id=1668036802]
+[node name="torch_mounted" parent="." index="0" unique_id=1645131998]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, 0.25)
 layers = 1024
 
@@ -157,7 +157,7 @@ light_specular = 0.0
 shadow_enabled = true
 shadow_blur = 0.5
 shadow_caster_mask = 4294966271
-omni_range = 8.0
+omni_range = 10.0
 
 [node name="Fire_03" type="Node3D" parent="." index="2" unique_id=41695624]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.45, 0.55)

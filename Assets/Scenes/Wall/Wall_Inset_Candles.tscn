@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://dji08pidw3pgl"]
 
-[ext_resource type="PackedScene" path="res://Assets/Dungeons/Wall/wall_inset_candles.gltf" id="1_dfme8"]
+[ext_resource type="PackedScene" uid="uid://yand4djtdef5" path="res://Assets/Dungeons/Wall/wall_inset_candles.gltf" id="1_dfme8"]
 [ext_resource type="PackedScene" uid="uid://dhqevcfe27wis" path="res://Assets/BinbunVFX/fire_effects/effects/Fire/fire_candle.tscn" id="2_qnu5y"]
 
 [node name="wall_inset_candles" unique_id=156602149 instance=ExtResource("1_dfme8")]
@@ -8,8 +8,19 @@
 [node name="Fire_Candle1" parent="." index="1" unique_id=1971377971 instance=ExtResource("2_qnu5y")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.064810574, 1.4109056, 0.016066074)
 
-[node name="Fire_Candle2" parent="." index="2" unique_id=551197059 instance=ExtResource("2_qnu5y")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.1594207, 1.3447368, 0.12294912)
-
-[node name="Fire_Candle3" parent="." index="3" unique_id=1920643705 instance=ExtResource("2_qnu5y")]
+[node name="Fire_Candle3" parent="." index="2" unique_id=428193628 instance=ExtResource("2_qnu5y")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.17430705, 1.5845821, -0.059279256)
+
+[node name="OmniLight3D" type="OmniLight3D" parent="." index="3" unique_id=747247896]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.059420697, 1.5447369, 0.12294912)
+light_color = Color(1, 0.53333336, 0.13333334, 1)
+light_energy = 2.0
+light_size = 0.1
+light_specular = 0.0
+shadow_enabled = true
+shadow_blur = 0.5
+shadow_caster_mask = 4294966271
+omni_range = 2.0
+
+[node name="Fire_Candle4" parent="." index="4" unique_id=1427700740 instance=ExtResource("2_qnu5y")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.1594207, 1.3447368, 0.12294912)

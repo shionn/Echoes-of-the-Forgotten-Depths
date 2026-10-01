@@ -827,6 +827,7 @@ transform = Transform3D(-0.9999999, 0, 7.5497894e-08, 0, 1, 0, -7.5497894e-08, 0
 
 [node name="torch_mounted2" parent="RDC/Lights" unique_id=1678202322 instance=ExtResource("7_68h1y")]
 transform = Transform3D(1.1920929e-07, 0, 0.99999994, 0, 1, 0, -0.99999994, 0, 1.1920929e-07, 1.9999999, 0, 4)
+visible = false
 
 [node name="Bar" type="Node3D" parent="RDC" unique_id=311502028]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14, 0, -8)
