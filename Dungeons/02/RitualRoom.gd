@@ -5,6 +5,10 @@ extends GameBase3D
 @onready var _skull3 = $wall_inset5/Skull
 @onready var _skull4 = $wall_inset6/Skull
 
+func _ready() -> void:
+	if quest_book.dungeon_02_trouver_passage_secret.is_done() :
+		$Secret/Closed.queue_free()
+		$Secret/Open.show()
 
 func _on_skull_state_change() -> void:
 	if _skull1.state and _skull2.state and _skull3.state and _skull4.state and $Secret/Closed.visible:

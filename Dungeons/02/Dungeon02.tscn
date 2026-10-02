@@ -549,7 +549,7 @@ script = ExtResource("1_letkk")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 68, 0, 0)
 
 [node name="torch_mounted" parent="EntranceSecret" unique_id=1618852209 instance=ExtResource("2_5dcro")]
-transform = Transform3D(-0.70710677, 0, -0.70710677, 0, 1, 0, 0.70710677, 0, -0.70710677, 2.050003, 0, 6.05)
+transform = Transform3D(0.9999999, 0, 0, 0, 1, 0, 0, 0, 0.9999999, -3, 0, -6)
 
 [node name="crates_stacked2" parent="EntranceSecret" unique_id=1530162916 instance=ExtResource("22_eijaf")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.4000015, 0, -4.3)
