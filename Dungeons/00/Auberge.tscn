@@ -342,7 +342,24 @@ metadata/_custom_type_script = "uid://cxe0hpd6pnr8q"
 
 [node name="Next" type="Node" parent="Aigle Jaune/LookingForQuest/Dungeon02 Accomplie/Next/Next/Next/Next" unique_id=752238525]
 script = ExtResource("3_fq3ns")
-text = "Je ne comprends pas comment il peut être encore en vie… Cette bague me semble étrange. Montre-la à Ferris. Il en tirera peut-être quelque chose."
+text = "Je ne comprends pas comment il peut être encore en vie… Cette bague me semble étrange. Montre-la à Ferris. Il en tirera peut-être quelque chose.
+
+Si c'est vraiment Valthorion, alors nous n'aurons d'autre choix que de l'affronté avant qu'il ne regagne toutes ces forces. "
+metadata/_custom_type_script = "uid://cxe0hpd6pnr8q"
+
+[node name="C\'est l\'anneau de Valthorion" type="Node" parent="Aigle Jaune/LookingForQuest" unique_id=1674266040]
+script = ExtResource("3_fq3ns")
+text = "Ferris confirme qu'il s'agit bien de l'anneau de Valthorion. Il dis avoir épaulé son père à le fabriquer quand il etait petit dans les [i]chambres de l'équilibre[/i]. 
+
+Cependant il ne sais plus ou se trouve ces chambres. Il pense que cet anneau pourrai nous aider à affronter Valthorion, mais ils nous faudrait le restaurer avant."
+metadata/_custom_type_script = "uid://cxe0hpd6pnr8q"
+
+[node name="Next" type="Node" parent="Aigle Jaune/LookingForQuest/C\'est l\'anneau de Valthorion" unique_id=391002061 node_paths=PackedStringArray("pnj")]
+script = ExtResource("3_fq3ns")
+text = "Si il dis vrai alors nous sommes en grand dangé. Il nous faut a tous prix affronter Valthorion. Cet anneau pourrai nous servir. Trouve ces chambres et restaure l'anneau. 
+
+Peut-être que Alaric en sais d'avantage. "
+pnj = NodePath("../../..")
 metadata/_custom_type_script = "uid://cxe0hpd6pnr8q"
 
 [node name="Luna Honey" parent="." unique_id=957068427 instance=ExtResource("1_fq3ns")]
@@ -740,7 +757,7 @@ metadata/_custom_type_script = "uid://cxe0hpd6pnr8q"
 
 [node name="Next" type="Node" parent="Ferris Ardent/Dialog/Anneau de Valthorion/Next/Next/Next/Next" unique_id=730840636 node_paths=PackedStringArray("pnj")]
 script = ExtResource("3_fq3ns")
-text = " Peut-être… mais il faudrait la restaurer avant. Pour cela, tu devras te rendre aux Chambres de l’Équilibre. C’est là-bas que mon père a conçu cet anneau.
+text = "Peut-être… mais il faudrait la restaurer avant. Pour cela, tu devras te rendre aux Chambres de l’Équilibre. C’est là-bas que mon père a conçu cet anneau.
 
 Cependant, j’étais trop petit pour me souvenir de l’emplacement exact. Mais je me souviens que mon père m’a souvent rabâché qu’il avait oublié son compas là-bas. Si tu trouves où c’est, dis-le-moi. Je vais chercher ce fichu compas.  "
 pnj = NodePath("../../../../../../..")

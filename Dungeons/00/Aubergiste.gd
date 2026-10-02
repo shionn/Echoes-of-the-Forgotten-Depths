@@ -19,6 +19,8 @@ func interact() -> void:
 		$"LookingForQuest/Mission Accomplie/Next/Next/Next/La potion étrange".enable = bag.have(Items.ItemName.FioleNecrolisAttivae)
 		
 		$"LookingForQuest/Dungeon02 Accomplie".enable = bag.have(Items.ItemName.SkullHead_Dungeon2) and quest_book.auberge_03.is_started()
+		
+		$"LookingForQuest/C'est l'anneau de Valthorion".enable = quest_book.auberge_03_identify_ring.is_done() and not quest_book.dungeon_03_restaurer_l_anneau.is_done()
 		gui.openDialog($LookingForQuest)
 	elif _food.visible :
 		gui.openDialog($Bienvenue/ApportFood)
