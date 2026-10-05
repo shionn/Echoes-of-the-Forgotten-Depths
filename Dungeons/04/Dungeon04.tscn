@@ -4,18 +4,22 @@
 [ext_resource type="Script" uid="uid://clj45v2evnyes" path="res://Dungeons/04/dungeon_04.gd" id="1_fgds8"]
 [ext_resource type="PackedScene" uid="uid://c7hr3jjaw5mle" path="res://Assets/Scenes/Meuble_2C_B.tscn" id="2_aia40"]
 [ext_resource type="PackedScene" uid="uid://7em3lt4lnfwr" path="res://Assets/Dungeons/Wall/wall.gltf" id="2_ordsp"]
+[ext_resource type="PackedScene" uid="uid://b6itcctgh0jpg" path="res://Assets/Restaurant/Kitchencabinet/kitchencounter_straight_decorated_styleB.gltf" id="3_cvhve"]
 [ext_resource type="PackedScene" uid="uid://cmh3h8q425t4u" path="res://Assets/Scenes/BarrelAndBoxe/Barrel_Large_Decorated.tscn" id="3_epf4s"]
 [ext_resource type="PackedScene" uid="uid://c6i85c8iqhfgd" path="res://Assets/Dungeons/Wall/TSplit/wall_Tsplit.gltf" id="3_oj485"]
 [ext_resource type="PackedScene" uid="uid://cd70tnt7fd2v6" path="res://Assets/Dungeons/Tables/table_long_decorated_C.gltf" id="3_uo7bd"]
 [ext_resource type="Script" uid="uid://cncib7kv0ld41" path="res://Dungeons/04/secret_wall.gd" id="3_v3yd4"]
+[ext_resource type="PackedScene" uid="uid://cx8brwxyptl13" path="res://Assets/Restaurant/Kitchencabinet/kitchencounter_straight_A_decorated_styleB.gltf" id="4_6lqkg"]
 [ext_resource type="PackedScene" uid="uid://0fn6al4q3iav" path="res://Assets/Dungeons/Wall/Corner/wall_corner.gltf" id="4_hsoyh"]
 [ext_resource type="Script" uid="uid://bpgb3pwbq61mh" path="res://Game/Interactable.gd" id="4_m0lar"]
 [ext_resource type="PackedScene" uid="uid://bqbfybidqqw6b" path="res://Assets/Dungeons/Tables/table_long_decorated_A.gltf" id="4_uo7bd"]
 [ext_resource type="PackedScene" uid="uid://dnj0c0ut1hd35" path="res://Assets/Scenes/Wall_Doorway.tscn" id="5_dhcam"]
 [ext_resource type="AudioStream" uid="uid://ce7drpk5sjkcm" path="res://Audio/KenneyRpgAudio/metalClick.ogg" id="5_m0lar"]
 [ext_resource type="PackedScene" uid="uid://cl36lcn4lo2eq" path="res://Assets/Scenes/Torch_Mounted.tscn" id="5_uivu1"]
+[ext_resource type="PackedScene" uid="uid://h7wraghg5y21" path="res://Assets/Restaurant/Kitchencabinet/kitchentable_A_large_decorated_A.gltf" id="5_wms0u"]
 [ext_resource type="PackedScene" uid="uid://beewm24j3envo" path="res://Assets/Dungeons/Tables/table_long.gltf" id="5_xxla7"]
 [ext_resource type="PackedScene" uid="uid://dalp31cf3de8a" path="res://Assets/Dungeons/Wall/Half/wall_half.gltf" id="6_aimia"]
+[ext_resource type="PackedScene" uid="uid://bpb8qx54xnx5u" path="res://Assets/Restaurant/Kitchencabinet/kitchentable_sink_large_decorated.gltf" id="6_j0lis"]
 [ext_resource type="PackedScene" uid="uid://ou26vngabxxy" path="res://Assets/Dungeons/Barrel/barrel_large.gltf" id="6_w2nd1"]
 [ext_resource type="AudioStream" uid="uid://dwe540ehhi37p" path="res://Audio/80-CC0-RPG-SFX/item_stone_01.ogg" id="6_ya2wp"]
 [ext_resource type="PackedScene" uid="uid://s24f2qnimaan" path="res://Assets/Dungeons/Barrel/barrel_small.gltf" id="7_82www"]
@@ -37,6 +41,18 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14, 0, 8)
 
 [node name="Meuble" parent="Kitchen" unique_id=273363225 instance=ExtResource("2_aia40")]
 transform = Transform3D(1.3113416e-07, 0, 1, 0, 1, 0, -1, 0, 1.3113416e-07, -3, 0, -3)
+
+[node name="kitchencounter_straight_decorated_styleB2" parent="Kitchen" unique_id=1810328216 instance=ExtResource("3_cvhve")]
+transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, 6.3999996, 0, 4.5)
+
+[node name="kitchencounter_straight_A_decorated_styleB2" parent="Kitchen" unique_id=1959827286 instance=ExtResource("4_6lqkg")]
+transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, 1.3999996, 0, 4.5)
+
+[node name="kitchentable_A_large_decorated_A2" parent="Kitchen" unique_id=767670628 instance=ExtResource("5_wms0u")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.5, 0, -0.5)
+
+[node name="kitchentable_sink_large_decorated2" parent="Kitchen" unique_id=1984370619 instance=ExtResource("6_j0lis")]
+transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, 3.8999996, 0, 4.5)
 
 [node name="KitchenReserv" type="Node3D" parent="." unique_id=233080462]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 15, 0, -8)
